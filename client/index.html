@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-store"></i> Магазин электроники</h1>
+            <p class="subtitle">Лучшие товары по лучшим ценам</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <button id="loadAllProducts" class="btn btn-primary">
+                    <i class="fas fa-list"></i> Все товары
+                </button>
+                <button id="loadCategories" class="btn btn-secondary">
+                    <i class="fas fa-tags"></i> Категории
+                </button>
+                <div class="search-box">
+                    <input type="number" id="productIdInput" placeholder="Введите ID товара" min="1">
+                    <button id="loadProductById" class="btn btn-success">
+                        <i class="fas fa-search"></i> Найти по ID
+                    </button>
+                </div>
+            </section>
+
+            <section class="status">
+                <div id="statusMessage" class="status-message">
+                    Готово к работе. Нажмите кнопку для загрузки товаров.
+                </div>
+            </section>
+
+            <section class="categories" id="categoriesSection" style="display: none;">
+                <h2><i class="fas fa-tags"></i> Категории</h2>
+                <div id="categoriesList" class="categories-list"></div>
+            </section>
+
+            <section class="products">
+                <h2><i class="fas fa-boxes"></i> Товары</h2>
+                <div id="productsList" class="products-grid">
+                    <!-- Товары будут загружены сюда -->
+                </div>
+            </section>
+
+            <section class="product-detail" id="productDetailSection" style="display: none;">
+                <h2><i class="fas fa-info-circle"></i> Детали товара</h2>
+                <div id="productDetail" class="product-detail-card">
+                    <!-- Детали товара будут загружены сюда -->
+                </div>
+                <button id="backToList" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Назад к списку
+                </button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Практическая работа №8 - Каталог товаров с FastAPI</p>
+            <p>Сервер: <span id="serverStatus">Не подключен</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
